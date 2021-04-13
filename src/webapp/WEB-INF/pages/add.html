@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+</head>
+<body>
+<h2>Add User</h2>
+<div>
+    <form th:if="${#request.userPrincipal != null}" th:action="@{/logout}"> <br>
+        <button type="submit">Exit</button>
+    </form>
+</div>
+<div>
+    <br>
+    <form th:action="@{add}"
+          th:object="${user}"
+          method="post">
+        <fieldset>
+            <legend>Data User</legend>
+            <p>
+                <label th:for="username">Login:<br>
+                    <input type="text"
+                           name="username"
+                           th:id="username">
+                </label>
+                <br>
+                <label th:for="password">Password:<br>
+                    <input type="text"
+                           name="password"
+                           th:id="password">
+                </label>
+                <br>
+                <label th:for="email">Email:<br>
+                    <input type="text"
+                           name="email"
+                           th:id="email">
+                </label>
+                <br>
+                <label th:for="firsName">FirstName:<br>
+                    <input type="text"
+                           name="firstName"
+                           th:id="firstName">
+                </label>
+                <br>
+                <label th:for="lastName">LastName:<br>
+                    <input type="text"
+                           name="lastName"
+                           th:id="lastName">
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox"
+                           name="roleAdmin"
+                           th:value="ROLE_ADMIN"
+                           th:text="Admin">
+                </label>
+                <label>
+                    <input type="checkbox"
+                           name="roleUser"
+                           th:value="ROLE_USER"
+                           th:text="User">
+                </label>
+            </p>
+        </fieldset>
+        <br>
+        <button type="submit">Save User</button>
+    </form>
+    <br/>
+    <form th:action="@{/admin/all}">
+        <button type="submit">Back to the user list</button>
+    </form>
+</div>
+</body>
+</html>

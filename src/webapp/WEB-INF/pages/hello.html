@@ -7,6 +7,9 @@
 </head>
 <body>
 <div>
+    <th:block th:include="menuPage">Menu</th:block>
+</div>
+<div>
     <th:block th:each="msg : ${messages}">
         <h1 th:text="${msg}"></h1>
     </th:block>
