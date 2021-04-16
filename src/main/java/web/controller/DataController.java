@@ -28,7 +28,7 @@ public class DataController {
 		return "login";
 	}
 
-	@GetMapping(value = "vip")
+	@GetMapping(value = "hello")
 	public String getUserPage(Model model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");
