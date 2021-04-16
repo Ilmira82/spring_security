@@ -86,7 +86,6 @@ public class AdminController {
                                {
 
         Set<Role> roles = new HashSet<>();
-       // roles.add(roleService.getRoleByName("ROLE_USER"));
         if (roleAdmin != null && roleAdmin .equals("ROLE_ADMIN")) {
             roles.add(roleService.getRoleByName("ROLE_ADMIN"));
         } else {
